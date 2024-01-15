@@ -33,9 +33,8 @@ class NewsFeed extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return ListView.builder(
-      itemCount: 10, // Number of news articles
+      itemCount: 10,
       itemBuilder: (context, index) {
         return Card(
           margin: EdgeInsets.all(8),
@@ -43,7 +42,7 @@ class NewsFeed extends StatelessWidget {
             leading: Container(
               width: orientation == Orientation.portrait ? 80 : 120,
               height: orientation == Orientation.portrait ? 80 : 120,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(
                     'https://sbktechventures.com/wp-content/uploads/2022/12/Ostad-logo.png',
@@ -55,8 +54,9 @@ class NewsFeed extends StatelessWidget {
             title: Text('News Title $index'),
             subtitle: Text('News Description $index'),
             onTap: () {
+              // Handle article tap
+              print('Tapped on News Article $index');
             },
-
           ),
         );
       },
