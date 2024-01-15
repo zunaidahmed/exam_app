@@ -8,6 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text('News Feed'),
@@ -45,7 +46,7 @@ class NewsFeed extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(
-                    'https://via.placeholder.com/150',
+                    'https://sbktechventures.com/wp-content/uploads/2022/12/Ostad-logo.png',
                   ),
                   fit: BoxFit.cover,
                 ),
