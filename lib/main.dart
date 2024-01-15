@@ -32,6 +32,7 @@ class NewsFeed extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return ListView.builder(
       itemCount: 10, // Number of news articles
       itemBuilder: (context, index) {
@@ -52,6 +53,8 @@ class NewsFeed extends StatelessWidget {
             ),
             title: Text('News Title $index'),
             subtitle: Text('News Description $index'),
+            onTap: () {
+            },
 
           ),
         );
