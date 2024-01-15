@@ -12,6 +12,8 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('News Feed'),
           backgroundColor: Colors.blue,
+          elevation: 5,
+          shadowColor: Colors.grey,
         ),
         body: OrientationBuilder(
           builder: (context, orientation) {
@@ -35,24 +37,22 @@ class NewsFeed extends StatelessWidget {
       itemBuilder: (context, index) {
         return Card(
           margin: EdgeInsets.all(8),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
-          ),
           child: ListTile(
             leading: Container(
-              width: 150,
-              height: 150,
-              child: Center(
-                child: Image.network(
-                  'https://via.placeholder.com/150', // Replace with your actual image URL
-                  width: 100, // Set your preferred width
-                  height: 100, // Set your preferred height
+              width: orientation == Orientation.portrait ? 80 : 120,
+              height: orientation == Orientation.portrait ? 80 : 120,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: NetworkImage(
+                    'https://via.placeholder.com/150',
+                  ),
                   fit: BoxFit.cover,
                 ),
               ),
             ),
             title: Text('News Title $index'),
             subtitle: Text('News Description $index'),
+
           ),
         );
       },
